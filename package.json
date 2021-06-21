@@ -1,0 +1,27 @@
+{
+  "name": "beary.github.io",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Pages",
+  "scripts": {
+    "start": "vuepress dev posts",
+    "build": "vuepress build posts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beary/beary.github.io.git"
+  },
+  "keywords": [
+    "pages",
+    "beary"
+  ],
+  "author": "beary <bearyme@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/beary/beary.github.io/issues"
+  },
+  "homepage": "https://github.com/beary/beary.github.io#readme",
+  "devDependencies": {
+    "vuepress": "^2.0.0-beta.19"
+  }
+}
