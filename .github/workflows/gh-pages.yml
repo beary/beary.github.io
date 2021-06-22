@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  docs:
+  gh-pages:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -24,11 +24,13 @@ jobs:
 
       - name: Build VuePress site
         run: pnpm build
+      
+      - name: Copy README.md
+        run: cp README.md posts/.vuepress/dist
 
       - name: Deploy GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: posts/.vuepress/dist
-          destination_dir: docs
           cname: beary.me
