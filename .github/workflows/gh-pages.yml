@@ -24,7 +24,7 @@ jobs:
 
       - name: Build VuePress site
         run: pnpm build
-      
+
       - name: Copy README.md
         run: cp README.md posts/.vuepress/dist
 
