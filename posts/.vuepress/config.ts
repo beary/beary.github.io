@@ -9,6 +9,11 @@ export default defineUserConfig<DefaultThemeOptions>({
         isGroup: true,
         text: 'Vue',
         children: ['/vue/vue3-reactivity-system.md']
+      },
+      {
+        isGroup: true,
+        text: 'CSS',
+        children: ['/css/css.md']
       }
     ]
   }
