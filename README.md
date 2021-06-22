@@ -1,2 +1,0 @@
-# beary.github.io
-Pages
