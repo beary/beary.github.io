@@ -14,11 +14,11 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: '14'
+          node-version: 16.x
 
       - name: Install pnpm
         run: npm install --global pnpm
-      
+
       - name: Cache .pnpm-store
         uses: actions/cache@v2
         with:
