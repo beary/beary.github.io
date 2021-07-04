@@ -95,3 +95,41 @@ h2 ~ p {
   /* 样式 */
 }
 ```
+
+## 属性选择符
+
+**属性选择符** 基于元素是否具有某个属性、或是属性是否具有某个值来选择元素。
+
+```css
+abbr[title] {
+  /* 选择有 title 属性的 abbr 元素 */
+}
+abbr[title]:hover {
+  /* 选择有 title 属性的 abbr 元素鼠标悬浮状态 */
+}
+input[type="submit"] {
+  /* 选择有 type 属性为 submit 的 input 元素 */
+}
+a[href^="http:"] {
+  /* 选择 href 以 http: 开头的 a 标签 */
+}
+img[src$=".jpg"] {
+  /* 选择 src 以 .jpg 结尾的 img 标签 */
+}
+a[href*="/about/"] {
+  /* 选择 href 中包含 /about/ 的 a 标签 */
+}
+a[ref~="next"] {
+  /*
+   * 选择 ref 中以空格分割后包含 next 的 a 标签
+   * 例如 <a ref="aa next xx"></a>
+   */
+}
+a[lang|="en"] {
+  /*
+   * 匹配指定值或指定值后连着短横线的情况，例如
+   * <a lang="en"></a>
+   * <a lang="en-us"></a>
+   */
+}
+```
