@@ -13,7 +13,7 @@ export default defineUserConfig<DefaultThemeOptions>({
       {
         isGroup: true,
         text: 'CSS',
-        children: ['/css/css.md']
+        children: ['/css/css.md', 'selector.md']
       }
     ]
   }
