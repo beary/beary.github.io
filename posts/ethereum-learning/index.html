@@ -1,1 +1,52 @@
-<!doctype html><html><head><meta charset=utf-8><meta name=keywords content="区块链, 以太坊, 以太币, 入门, 学习"><meta name=viewport content="width=device-width,initial-scale=1"><link rel=stylesheet href=/css/main.min.css><title>Beary | 入门区块链（以太坊）</title></head><body class="px-5 selection:text-white selection:bg-green-600 bg-slate-100"><header class="max-w-screen-sm mx-auto flex items-baseline justify-between border-b border-dark-100 py-8"><h1 class="font-bold text-2xl">入门区块链（以太坊）</h1></header><main class="max-w-screen-sm mx-auto pt-5"><article class="prose max-w-none mb-5 prose-green"><h2 id=1-前言>1. 前言</h2><p>很多风险厌恶型的人已经把区块链与诈骗划等号了，尽管他们只是从一些网络热门话题里见到过这个词。我用“事物”而不是“概念”来描述它，是因为区块链本身是一个实际存在和运行着的东西。本着让自己不要成为排斥新事物的老古董的想法，我决定抛开被二手信息带动出来的情绪，从技术角度去了解它是到底是一个怎样的存在。市面上关于区块链学习的素材非常多，有付费的有免费的，但其实<a href=https://ethereum.org/developers/docs/>以太坊官方提供的的开发者文档</a>就是一个非常好的学习教程。</p><blockquote><p>A blockchain is a public database that is updated and shared across many computers in a network. （区块链是一个公共的数据库，它被网络中的许多计算机更新和共享）</p></blockquote><p>在以太坊的开发者文档中，区块链被描述为一种数据库，所以想要了解区块链，必须知道什么是数据库。</p><p><em><strong>本文以以太坊为例，文中提到的区块链如无特殊说明均指以太坊。</strong></em></p><h2 id=2-什么是数据库>2. 什么是数据库</h2><p>这部分是写给非开发人员的，懂编程的人可以跳过这一部分。</p><p>传统的数据库是由一台或是一群服务器运行的，最常见的用法就是应用服务器将不同的记录存储在不同的表中。可以这样理解：一个数据库就是一个保险箱，里面有很多个小本本，不同的本子上的内容的类型不一样，比如有电话本，有账本，有日记本等等。</p><p>例如：腾讯有一个很大的保险柜，里面有一个本子写了所有用户的微信号和密码，另外一个本子存放了每个用户的好友列表</p><ol><li>你登陆微信的时候就会把微信号和密码发送给腾讯</li><li>腾讯打开保险箱，核实你发过来的账号密码，如果对了就给你一个暗号</li><li>你让腾讯把你的好友列表发给你，并且念了暗号</li><li>腾讯通过暗号判断你是哪个用户，并打开保险箱在另一个本子上拿到好友列表发给你</li></ol><p>根据以上场景不难推断，这个保险箱（数据库）肯定只有腾讯自己才能开，里面的内容不能公开出来对吧？不然别人拿了那个本子查到你的号登录上去岂不是可以冒充你了？</p><h2 id=3-什么是区块链>3. 什么是区块链</h2><p>区块链是一个<strong>开放</strong>的数据库。开放，意味着里面存放的东西都是公开的；数据库，则说明着它是被用来存储数据的。</p><p>脱离区块链的存储数据的功能来谈论它的数据结构容易让人疑惑这东西有啥用，所以下面先介绍区块链到底是拿来存啥的。</p><h3 id=31-区块链里的数据是什么样的>3.1 区块链里的数据是什么样的</h3><p>以太坊为例，打开 <a href=https://etherscan.io/>Etherscan</a>，在 Latest Blocks 里面随意打开一个区块，然后查看它的 Transactions 列表，可以看到很多条记录。每一条数据的主要内容如下：</p><ul><li>Txn Hash: 该条交易的唯一标识</li><li>Method: 交易方式</li><li>Block: 该交易条目被记录在哪一个区块上</li><li>Age: 交易时间</li><li>From: 从哪个地址转出的</li><li>To: 转到哪个地址</li><li>Value: 交易金额（单位：ETH）</li><li>Txn Fee: 交易费用</li></ul><p>所以对于以太坊区块链来说，它所存储的数据就是：<strong>某个地址在某个时刻，向另一个地址以何种方式转了多少以太币 (ETH) ，交易费用为多少</strong>。当然交易详情里有一些更加详细的信息，比如燃料费之类的，但上面的是主要的。</p><p>在交易记录中，每个参与者都是一个地址，里面没有任何姓名电话住址之类的个人隐私信息，所以虽然所有的交易记录都是公开的，但没有人能通过地址定位到现实中的个人，这也是<strong>开放</strong>的基础。</p><h3 id=32-区块链的结构>3.2 区块链的结构</h3><p>Anders 的这个视频对于区块链数据结构的讲解非常的通俗易懂，非常推荐看这个视频来了解它的数据结构是为什么被设计成这样的。</p><div style=position:relative;padding-bottom:56.25%;height:0;overflow:hidden><iframe src=https://www.youtube.com/embed/_160oMzblY8 style=position:absolute;top:0;left:0;width:100%;height:100%;border:0 allowfullscreen title="YouTube Video"></iframe></div><p>我还是以本子的例子来讲：假如你每一段时间（一个月或者一年）的出入账都用一个单独的账本来记录，这个本子就是一个区块。每个账本都有顺序，比如三月的前一个本子是二月，这样一连串账本就是区块链了。</p><p>但只用时间编号把账本关联起来是不安全的，<strong>如果有人想造假，他把某些记录加减一些金额就可以了</strong>。所以除了单纯的编号顺序，每一个账本需要一种防止篡改的机制，这对于实体账本来说很难做到，但对于计算机里的记录则不难实现。方案就是把这一个账本的所有的交易记录通过某种规则进行计算，得到一个<strong>哈希值</strong>，然后将这个值也记录到这个账本里。这样如果有人改了某条记录，那么新的记录计算出来的哈希值就和账本原有的哈希值不一样了，大家就知道这个账本被改过了。</p><p><strong>那么如果有人不但改了记录，把账本上记录的哈希值一起改了呢</strong>？所以每个账本不但要记录自己的哈希值，还会记录它前一个账本的哈希值，并且计算哈希值的时候，除了当前区块中的记录，上一个区块的哈希值也会所为计算的一部分。这样的话，如果有人改了某个账本和账本的哈希值，就和下一个账本记录的不一样的，还是会被发现。</p><p><strong>那如果有人从某一个账本开始，把后续的账本全部都给改了呢</strong>？所以每个账本链条不能只保管一份，得存在多份，给不同的人来保管。比如 CEO 有一份，CTO 有一份，会计有一份，每次记账三个人的都得记上去。万一会计把某个账本和后续账本都改了，但是和 CEO 与 CTO 的账本一对比，同一编号的哈希值不对，也就露馅了。</p><p><strong>那如果会计和 CTO 串通一气一起改了呢</strong>？所以每个账本的链条是完全公开，全世界任何人或机构都可以加入这个网络复制一份链条一起记账，只要没有超过一半的节点拥有者有共同的利益关系来串通一气改数据，根据少数服从多数的原则，这个账本是没法改的。</p><h3 id=33-加密货币>3.3 加密货币</h3><p>每次交易会被发送到区块链的网络上，区块链网络会去验证并且将其记录在一个区块（账本）上，并最终让所有的节点将把这个区块记录下来。而提供这些服务是需要成本的，比如网络、服务器、电费等等，所以区块链的协议会提供一种货币来奖励完成区块打包的节点。对于以太坊，之前的奖励规则是<a href=https://ethereum.org/developers/docs/consensus-mechanisms/pow/>工作量证明</a>，后改为<a href=https://ethereum.org/developers/docs/consensus-mechanisms/pos/>权益证明</a>，本文不多做细节讲解。</p><h3 id=34-去中心化应用>3.4 去中心化应用</h3><p>由于以太坊运行在一个公共网络上，有大量的机器在支撑网络的运行，而以太坊节点除了支持在 3.1 中提到的交易类型除了单纯的以太币转账交易，还提供了一些接口供开发者开发自己的交易逻辑。即：以太坊可以按照开发者提供的程序中的逻辑来进行以太币交易。这就是<strong>智能合约</strong>。</p><p>开发者在开发自己的应用程序时，可以把一部分逻辑放入智能合约中，使之去中心化，从而获得更好的安全性。</p><h2 id=4-对区块链的看法>4. 对区块链的看法</h2><p>区块链的意义在于去中心化，单链条无论怎么加密都有被篡改的可能。而去中心化成本高昂，容易产生性能瓶颈。如果没有智能合约，以太坊就是一个单纯的产生以太币和记录以太币交易信息的网络。有了智能合约之后，它的安全性能为其它应用所用，但区块产生和被记录的成本与速度，在目前这个阶段还不能支撑大访问量的平民应用。区块链为第三方应用提供的能力所带来的收益，需要覆盖它的运转成本。估计未来更多会用在一些无论合法或非法的、低频高价值的金融场景里。</p></article></main><script src=/js/disable-wechat-fontsize.js defer></script></body></html>
+<!DOCTYPE html><html lang="en"> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v4.0.7"><!-- Font preloads --><link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://example.com/posts/ethereum-learning/"><!-- Primary Meta Tags --><title>入门区块链（以太坊）</title><meta name="title" content="入门区块链（以太坊）"><meta name="description" content=""><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://example.com/posts/ethereum-learning/"><meta property="og:title" content="入门区块链（以太坊）"><meta property="og:description" content=""><meta property="og:image" content="https://example.com/blog-placeholder-1.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://example.com/posts/ethereum-learning/"><meta property="twitter:title" content="入门区块链（以太坊）"><meta property="twitter:description" content=""><meta property="twitter:image" content="https://example.com/blog-placeholder-1.jpg"><link rel="stylesheet" href="/_astro/index.hXyrZR0i.css" /></head> <body class="bg-slate-100"> <header class="shadow bg-white"> <nav class="flex justify-between max-w-2xl px-2 items-center mx-auto"> <h2 class="text-lg font-bold"> <a class="text-gray-800" href="/">Beary&#39;s Blog</a> </h2> <div> <a href="/" class="px-2 py-4 inline-block te text-gray-800"> 
+Posts
+ </a> </div> </nav> </header> <main> <article class="mx-auto max-w-2xl px-2"> <h1 class="text-3xl font-extrabold mt-8 mb-6">入门区块链（以太坊）</h1> <div class="prose max-w-none">  <h2 id="1-前言">1. 前言</h2>
+<p>很多风险厌恶型的人已经把区块链与诈骗划等号了，尽管他们只是从一些网络热门话题里见到过这个词。我用“事物”而不是“概念”来描述它，是因为区块链本身是一个实际存在和运行着的东西。本着让自己不要成为排斥新事物的老古董的想法，我决定抛开被二手信息带动出来的情绪，从技术角度去了解它是到底是一个怎样的存在。市面上关于区块链学习的素材非常多，有付费的有免费的，但其实<a href="https://ethereum.org/developers/docs/">以太坊官方提供的的开发者文档</a>就是一个非常好的学习教程。</p>
+<blockquote>
+<p>A blockchain is a public database that is updated and shared across many computers in a network. （区块链是一个公共的数据库，它被网络中的许多计算机更新和共享）</p>
+</blockquote>
+<p>在以太坊的开发者文档中，区块链被描述为一种数据库，所以想要了解区块链，必须知道什么是数据库。</p>
+<p><em><strong>本文以以太坊为例，文中提到的区块链如无特殊说明均指以太坊。</strong></em></p>
+<h2 id="2-什么是数据库">2. 什么是数据库</h2>
+<p>这部分是写给非开发人员的，懂编程的人可以跳过这一部分。</p>
+<p>传统的数据库是由一台或是一群服务器运行的，最常见的用法就是应用服务器将不同的记录存储在不同的表中。可以这样理解：一个数据库就是一个保险箱，里面有很多个小本本，不同的本子上的内容的类型不一样，比如有电话本，有账本，有日记本等等。</p>
+<p>例如：腾讯有一个很大的保险柜，里面有一个本子写了所有用户的微信号和密码，另外一个本子存放了每个用户的好友列表</p>
+<ol>
+<li>你登陆微信的时候就会把微信号和密码发送给腾讯</li>
+<li>腾讯打开保险箱，核实你发过来的账号密码，如果对了就给你一个暗号</li>
+<li>你让腾讯把你的好友列表发给你，并且念了暗号</li>
+<li>腾讯通过暗号判断你是哪个用户，并打开保险箱在另一个本子上拿到好友列表发给你</li>
+</ol>
+<p>根据以上场景不难推断，这个保险箱（数据库）肯定只有腾讯自己才能开，里面的内容不能公开出来对吧？不然别人拿了那个本子查到你的号登录上去岂不是可以冒充你了？</p>
+<h2 id="3-什么是区块链">3. 什么是区块链</h2>
+<p>区块链是一个<strong>开放</strong>的数据库。开放，意味着里面存放的东西都是公开的；数据库，则说明着它是被用来存储数据的。</p>
+<p>脱离区块链的存储数据的功能来谈论它的数据结构容易让人疑惑这东西有啥用，所以下面先介绍区块链到底是拿来存啥的。</p>
+<h3 id="31-区块链里的数据是什么样的">3.1 区块链里的数据是什么样的</h3>
+<p>以太坊为例，打开 <a href="https://etherscan.io/">Etherscan</a>，在 Latest Blocks 里面随意打开一个区块，然后查看它的 Transactions 列表，可以看到很多条记录。每一条数据的主要内容如下：</p>
+<ul>
+<li>Txn Hash: 该条交易的唯一标识</li>
+<li>Method: 交易方式</li>
+<li>Block: 该交易条目被记录在哪一个区块上</li>
+<li>Age: 交易时间</li>
+<li>From: 从哪个地址转出的</li>
+<li>To: 转到哪个地址</li>
+<li>Value: 交易金额（单位：ETH）</li>
+<li>Txn Fee: 交易费用</li>
+</ul>
+<p>所以对于以太坊区块链来说，它所存储的数据就是：<strong>某个地址在某个时刻，向另一个地址以何种方式转了多少以太币 (ETH) ，交易费用为多少</strong>。当然交易详情里有一些更加详细的信息，比如燃料费之类的，但上面的是主要的。</p>
+<p>在交易记录中，每个参与者都是一个地址，里面没有任何姓名电话住址之类的个人隐私信息，所以虽然所有的交易记录都是公开的，但没有人能通过地址定位到现实中的个人，这也是<strong>开放</strong>的基础。</p>
+<h3 id="32-区块链的结构">3.2 区块链的结构</h3>
+<p>Anders 的这个视频对于区块链数据结构的讲解非常的通俗易懂，非常推荐看这个视频来了解它的数据结构是为什么被设计成这样的。</p>
+<p>{{&#x3C; youtube id=“_160oMzblY8” >}}</p>
+<p>我还是以本子的例子来讲：假如你每一段时间（一个月或者一年）的出入账都用一个单独的账本来记录，这个本子就是一个区块。每个账本都有顺序，比如三月的前一个本子是二月，这样一连串账本就是区块链了。</p>
+<p>但只用时间编号把账本关联起来是不安全的，<strong>如果有人想造假，他把某些记录加减一些金额就可以了</strong>。所以除了单纯的编号顺序，每一个账本需要一种防止篡改的机制，这对于实体账本来说很难做到，但对于计算机里的记录则不难实现。方案就是把这一个账本的所有的交易记录通过某种规则进行计算，得到一个<strong>哈希值</strong>，然后将这个值也记录到这个账本里。这样如果有人改了某条记录，那么新的记录计算出来的哈希值就和账本原有的哈希值不一样了，大家就知道这个账本被改过了。</p>
+<p><strong>那么如果有人不但改了记录，把账本上记录的哈希值一起改了呢</strong>？所以每个账本不但要记录自己的哈希值，还会记录它前一个账本的哈希值，并且计算哈希值的时候，除了当前区块中的记录，上一个区块的哈希值也会所为计算的一部分。这样的话，如果有人改了某个账本和账本的哈希值，就和下一个账本记录的不一样的，还是会被发现。</p>
+<p><strong>那如果有人从某一个账本开始，把后续的账本全部都给改了呢</strong>？所以每个账本链条不能只保管一份，得存在多份，给不同的人来保管。比如 CEO 有一份，CTO 有一份，会计有一份，每次记账三个人的都得记上去。万一会计把某个账本和后续账本都改了，但是和 CEO 与 CTO 的账本一对比，同一编号的哈希值不对，也就露馅了。</p>
+<p><strong>那如果会计和 CTO 串通一气一起改了呢</strong>？所以每个账本的链条是完全公开，全世界任何人或机构都可以加入这个网络复制一份链条一起记账，只要没有超过一半的节点拥有者有共同的利益关系来串通一气改数据，根据少数服从多数的原则，这个账本是没法改的。</p>
+<h3 id="33-加密货币">3.3 加密货币</h3>
+<p>每次交易会被发送到区块链的网络上，区块链网络会去验证并且将其记录在一个区块（账本）上，并最终让所有的节点将把这个区块记录下来。而提供这些服务是需要成本的，比如网络、服务器、电费等等，所以区块链的协议会提供一种货币来奖励完成区块打包的节点。对于以太坊，之前的奖励规则是<a href="https://ethereum.org/developers/docs/consensus-mechanisms/pow/">工作量证明</a>，后改为<a href="https://ethereum.org/developers/docs/consensus-mechanisms/pos/">权益证明</a>，本文不多做细节讲解。</p>
+<h3 id="34-去中心化应用">3.4 去中心化应用</h3>
+<p>由于以太坊运行在一个公共网络上，有大量的机器在支撑网络的运行，而以太坊节点除了支持在 3.1 中提到的交易类型除了单纯的以太币转账交易，还提供了一些接口供开发者开发自己的交易逻辑。即：以太坊可以按照开发者提供的程序中的逻辑来进行以太币交易。这就是<strong>智能合约</strong>。</p>
+<p>开发者在开发自己的应用程序时，可以把一部分逻辑放入智能合约中，使之去中心化，从而获得更好的安全性。</p>
+<h2 id="4-对区块链的看法">4. 对区块链的看法</h2>
+<p>区块链的意义在于去中心化，单链条无论怎么加密都有被篡改的可能。而去中心化成本高昂，容易产生性能瓶颈。如果没有智能合约，以太坊就是一个单纯的产生以太币和记录以太币交易信息的网络。有了智能合约之后，它的安全性能为其它应用所用，但区块产生和被记录的成本与速度，在目前这个阶段还不能支撑大访问量的平民应用。区块链为第三方应用提供的能力所带来的收益，需要覆盖它的运转成本。估计未来更多会用在一些无论合法或非法的、低频高价值的金融场景里。</p>  </div> </article> </main> </body></html>
