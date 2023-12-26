@@ -1,8 +1,16 @@
-<!DOCTYPE html><html lang="en"> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v4.0.7"><!-- Canonical URL --><link rel="canonical" href="https://example.com/posts/ethereum-learning/"><!-- Primary Meta Tags --><title>入门区块链（以太坊）</title><meta name="title" content="入门区块链（以太坊）"><meta name="description" content=""><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://example.com/posts/ethereum-learning/"><meta property="og:title" content="入门区块链（以太坊）"><meta property="og:description" content=""><!-- <meta property="og:image" content={new URL(image, Astro.url)} /> --><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://example.com/posts/ethereum-learning/"><meta property="twitter:title" content="入门区块链（以太坊）"><meta property="twitter:description" content=""><!-- <meta property="twitter:image" content={new URL(image, Astro.url)} /> --><link rel="stylesheet" href="/_astro/index.MrrdEDyQ.css" /></head> <body class="bg-slate-100"> <header class="shadow bg-white"> <nav class="flex justify-between max-w-2xl px-2 items-center mx-auto"> <h2 class="text-lg font-bold"> <a class="text-gray-800" href="/">Beary&#39;s Blog</a> </h2> <div> <a href="/" class="px-3 py-2 md:py-3 inline-block text-gray-800 border-y-4 border-transparent"> 
+<!DOCTYPE html><html lang="en"> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v4.0.7"><!-- Canonical URL --><link rel="canonical" href="https://example.com/posts/ethereum-learning/"><!-- Primary Meta Tags --><title>入门区块链（以太坊）</title><meta name="title" content="入门区块链（以太坊）"><!-- Open Graph / Facebook --><!-- <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.url)} /> --><!-- Twitter --><!-- <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(image, Astro.url)} /> --><link rel="stylesheet" href="/_astro/index.wyzlkDnL.css" /></head> <body class="bg-slate-100"> <header class="shadow bg-white"> <nav class="flex justify-between max-w-2xl px-4 items-center mx-auto"> <h2 class="text-lg font-bold"> <a class="text-gray-800" href="/">Beary&#39;s Blog</a> </h2> <div> <a href="/" class="px-3 py-3 inline-block text-gray-800 border-y-4 border-transparent"> 
 Posts
- </a> <a href="/tags" class="px-3 py-2 md:py-3 inline-block text-gray-800 border-y-4 border-transparent"> 
+ </a> <a href="/tags" class="px-3 py-3 inline-block text-gray-800 border-y-4 border-transparent"> 
 Tags
- </a> </div> </nav> </header> <main> <article class="mx-auto max-w-2xl px-2"> <h1 class="text-3xl font-extrabold mt-8 mb-2">入门区块链（以太坊）</h1> <time class="pb-4 block italic text-stone-500"> Thu Nov 30 2023 </time> <div class="prose max-w-none">  <h2 id="1-前言">1. 前言</h2>
+ </a> </div> </nav> </header> <main class="mx-auto max-w-2xl px-4">  <article> <h1 class="text-3xl font-extrabold mt-8 mb-6">入门区块链（以太坊）</h1> <time class="pb-6 block italic text-stone-500"> Thu Nov 30 2023 </time> <div class="prose max-w-none"> <h2 id="1-前言">1. 前言</h2>
 <p>很多风险厌恶型的人已经把区块链与诈骗划等号了，尽管他们只是从一些网络热门话题里见到过这个词。我用“事物”而不是“概念”来描述它，是因为区块链本身是一个实际存在和运行着的东西。本着让自己不要成为排斥新事物的老古董的想法，我决定抛开被二手信息带动出来的情绪，从技术角度去了解它是到底是一个怎样的存在。市面上关于区块链学习的素材非常多，有付费的有免费的，但其实<a href="https://ethereum.org/developers/docs/">以太坊官方提供的的开发者文档</a>就是一个非常好的学习教程。</p>
 <blockquote>
 <p>A blockchain is a public database that is updated and shared across many computers in a network. （区块链是一个公共的数据库，它被网络中的许多计算机更新和共享）</p>
@@ -51,4 +59,4 @@ Tags
 <p>由于以太坊运行在一个公共网络上，有大量的机器在支撑网络的运行，而以太坊节点除了支持在 3.1 中提到的交易类型除了单纯的以太币转账交易，还提供了一些接口供开发者开发自己的交易逻辑。即：以太坊可以按照开发者提供的程序中的逻辑来进行以太币交易。这就是<strong>智能合约</strong>。</p>
 <p>开发者在开发自己的应用程序时，可以把一部分逻辑放入智能合约中，使之去中心化，从而获得更好的安全性。</p>
 <h2 id="4-对区块链的看法">4. 对区块链的看法</h2>
-<p>区块链的意义在于去中心化，单链条无论怎么加密都有被篡改的可能。而去中心化成本高昂，容易产生性能瓶颈。如果没有智能合约，以太坊就是一个单纯的产生以太币和记录以太币交易信息的网络。有了智能合约之后，它的安全性能为其它应用所用，但区块产生和被记录的成本与速度，在目前这个阶段还不能支撑大访问量的平民应用。区块链为第三方应用提供的能力所带来的收益，需要覆盖它的运转成本。估计未来更多会用在一些无论合法或非法的、低频高价值的金融场景里。</p>  </div> </article> </main> </body></html>
+<p>区块链的意义在于去中心化，单链条无论怎么加密都有被篡改的可能。而去中心化成本高昂，容易产生性能瓶颈。如果没有智能合约，以太坊就是一个单纯的产生以太币和记录以太币交易信息的网络。有了智能合约之后，它的安全性能为其它应用所用，但区块产生和被记录的成本与速度，在目前这个阶段还不能支撑大访问量的平民应用。区块链为第三方应用提供的能力所带来的收益，需要覆盖它的运转成本。估计未来更多会用在一些无论合法或非法的、低频高价值的金融场景里。</p> </div> </article>  </main> </body></html>

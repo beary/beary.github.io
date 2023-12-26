@@ -1,8 +1,16 @@
-<!DOCTYPE html><html lang="en"> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v4.0.7"><!-- Canonical URL --><link rel="canonical" href="https://example.com/posts/how-to-create-a-personal-website/"><!-- Primary Meta Tags --><title>如何构建个人博客</title><meta name="title" content="如何构建个人博客"><meta name="description" content=""><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://example.com/posts/how-to-create-a-personal-website/"><meta property="og:title" content="如何构建个人博客"><meta property="og:description" content=""><!-- <meta property="og:image" content={new URL(image, Astro.url)} /> --><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://example.com/posts/how-to-create-a-personal-website/"><meta property="twitter:title" content="如何构建个人博客"><meta property="twitter:description" content=""><!-- <meta property="twitter:image" content={new URL(image, Astro.url)} /> --><link rel="stylesheet" href="/_astro/index.MrrdEDyQ.css" /></head> <body class="bg-slate-100"> <header class="shadow bg-white"> <nav class="flex justify-between max-w-2xl px-2 items-center mx-auto"> <h2 class="text-lg font-bold"> <a class="text-gray-800" href="/">Beary&#39;s Blog</a> </h2> <div> <a href="/" class="px-3 py-2 md:py-3 inline-block text-gray-800 border-y-4 border-transparent"> 
+<!DOCTYPE html><html lang="en"> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v4.0.7"><!-- Canonical URL --><link rel="canonical" href="https://example.com/posts/how-to-create-a-personal-website/"><!-- Primary Meta Tags --><title>如何构建个人博客</title><meta name="title" content="如何构建个人博客"><!-- Open Graph / Facebook --><!-- <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.url)} /> --><!-- Twitter --><!-- <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(image, Astro.url)} /> --><link rel="stylesheet" href="/_astro/index.wyzlkDnL.css" /></head> <body class="bg-slate-100"> <header class="shadow bg-white"> <nav class="flex justify-between max-w-2xl px-4 items-center mx-auto"> <h2 class="text-lg font-bold"> <a class="text-gray-800" href="/">Beary&#39;s Blog</a> </h2> <div> <a href="/" class="px-3 py-3 inline-block text-gray-800 border-y-4 border-transparent"> 
 Posts
- </a> <a href="/tags" class="px-3 py-2 md:py-3 inline-block text-gray-800 border-y-4 border-transparent"> 
+ </a> <a href="/tags" class="px-3 py-3 inline-block text-gray-800 border-y-4 border-transparent"> 
 Tags
- </a> </div> </nav> </header> <main> <article class="mx-auto max-w-2xl px-2"> <h1 class="text-3xl font-extrabold mt-8 mb-2">如何构建个人博客</h1> <time class="pb-4 block italic text-stone-500"> Thu Jul 20 2023 </time> <div class="prose max-w-none">  <h2 id="1-技术选型">1. 技术选型</h2>
+ </a> </div> </nav> </header> <main class="mx-auto max-w-2xl px-4">  <article> <h1 class="text-3xl font-extrabold mt-8 mb-6">如何构建个人博客</h1> <time class="pb-6 block italic text-stone-500"> Thu Jul 20 2023 </time> <div class="prose max-w-none"> <h2 id="1-技术选型">1. 技术选型</h2>
 <p>构建个人网站的目的是为了记录与分享，所以根据这两点原则来进行技术选型。</p>
 <p>我使用 VSCode 编写 Markdown 非常熟练，不需要复杂的网页富文本编辑页面。</p>
 <p>如果期望网站的内容能够很好的被搜索引擎所搜索到的话，那么 SEO 也是非常重要的，即不能使用 React 或者 Vue 之类的前端框架在浏览器端渲染我的内容，而应该在用户请求时直接返回渲染完毕的 HTML 页面给用户。</p>
@@ -48,4 +56,4 @@ Tags
 <h2 id="3-上线">3. 上线</h2>
 <p>GitHub Action + Cloudflare Pages ，当然 Cloudflare 也可以换成任意支持公网访问的静态文件托管平台，比如一些云提供商的文件存储或者 Vercel/Netlify 之类的玩意。接下来就可以愉快的 Commit -> Push 自动发布了。</p>
 <h2 id="4-总结">4. 总结</h2>
-<p>非常推荐用 Hugo 来构建静态博客，简单快速纯粹。</p>  </div> </article> </main> </body></html>
+<p>非常推荐用 Hugo 来构建静态博客，简单快速纯粹。</p> </div> </article>  </main> </body></html>
